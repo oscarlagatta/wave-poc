@@ -1,0 +1,33 @@
+Questions:
+
+0.- When a Tagger selects a single sound recording (ISRC) and navigates from Audition into Amplify, the Tagger 
+    should be able to view previously applied tags, both those applied by Amplify users and via the IRCAM process within the Amplify tagging UI.
+1.- When the user comes from Audition,  in Amplify how do I retreive the previously applied tags? 
+    1.1- What is the API details ?
+2.- 
+
+
+Constraints:
+1.- When the user selects a sound recording record, only the the tags applied to the selected single sound recording are visible.
+2.- It is assumed that the user will not be able to select more than one sound recording at a time to view and/or update tags.
+
+
+Front-end IRCAM Tag & Manual Tags: 
+Parent to be visible and children should be collapsed if keyword not available (Front end dev control needed, Matt to mockup):
+Romantic (Parent) > Early Romantic (child is shown), but not Early.
+
+If the user selects too choose any portion of the breadcrumbs within the Taxonomy view, the behaviour would be 
+to traverse the user to the selected portion of the breadcrumb in the Taxonomy hierarchy. CAN YOU EXPLAIN WITH AN EXAMPLE ?
+
+
+Technical Notes (including logic and exceptions)
+*----------------------------------------------*
+An IRCAM tag(s) is only displayed/visible to the user if the confidence value from the IRCAM output for the selected sound recording
+ is greater than or equal to the threshold set for that item.
+
+ If the threshold value for an item is changed (i.e. an Administrator updates the taxonomy mapping/threshold) and the confidence value
+  for that item no longer meets the threshold, the corresponding tag is no longer displayed/visible to the user.
+
+If the confidence value for a tag item changes (e.g. re-training of the IRCAM algorithm results in a different set of outputs
+ when the logic is rerun), and it no longer meets the defined threshold, the corresponding Amplify tag is no longer 
+ displayed/visible to the user.
