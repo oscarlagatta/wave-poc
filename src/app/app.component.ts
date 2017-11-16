@@ -38,9 +38,9 @@ export class AppComponent implements OnInit {
     });
 
     try {
-      this.wavesurfer.load('../wave-poc/assets/music2.mp3');
-      this.wavesurfer2.load('../wave-poc/assets/music2.mp3');
-      this.wavesurfer3.load('../wave-poc/assets/music2.mp3');
+      this.wavesurfer.load('../wave-poc/assets/music3.mp3');
+      this.wavesurfer2.load('../wave-poc/assets/music3.mp3');
+      this.wavesurfer3.load('../wave-poc/assets/music3.mp3');
     }
     catch (e) {
       console.log(e);
